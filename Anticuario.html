@@ -15,20 +15,34 @@
   
   <body>
     
+    <!-- Barra superior de la paguina -->
     <header class= "header">
       <div class="logo"> 
-        <img src="OIP.jpg" alt="Logo de la pagina">
+        <img href= "Anticuario.html" src="OIP.jpg" alt="Logo de la pagina">
       </div>
       <nav>
         <ul class="nav_links">
-          <li><a href="#">A</a></li>
-          <li><a href="#">B</a></li>
-          <li><a href="#">C</a></li>
+          <li><a href="#">Etiquetas</a></li>
+          <li><a href="#">Filtros</a></li>
+          <li><a href="#">Ofertas</a></li>
         </ul>
       </nav>
-      <a href="#" class="btn"><button>D</button></a>
-    </header>
-    
-  </body>
+      <a href="#" class="btn"><button>Servicio al cliente</button></a>
 
+      <a onclick="openNav()" href="#" class="menu"><button>Menu</button></a>
+      <div class="overlay" id="mobile_menu">
+        <a onclick="closeNav()" href="" class="close">&times;</a>
+        <div class="overlay_content">
+          <a href="#">Etiquetas</a>
+          <a href="#">Filtros</a>
+          <a href="#">Ofertas</a>
+          <a href="#">Servicio al cliente</a>
+        </div>
+      </div>
+
+
+    </header>
+
+    <script type="text/javascript" src="nav.js"></script>
+  </body>
 </html>
