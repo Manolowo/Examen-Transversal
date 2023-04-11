@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Anticuario</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="Author" content="Filtros" />
+    <link rel="stylesheet" href="styles.css">
+
+    <Style>
+        h1{
+            text-align: left;
+            font-size: 40px;
+            margin-left: 25px;
+        }
+
+        p{
+            text-align:center;
+            font-size: 30px;
+            color: black;
+        }
+        .Proximamente{
+            text-align: center;
+            transform: scale(1.2);
+        }
+        
+
+    </Style>
+
+  </head>
+  
+  <body>
+    
+    <!-- Barra superior de la paguina -->
+    <header class= "header">
+      <div class="logo"> 
+        <a href="Anticuario.html"><img src="OIP.jpg" alt="Logo de la pagina"></a>
+      </div>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="Etiquetas.html">Etiquetas</a></li>
+          <li><a href="Filtros.html">Filtros</a></li>
+          <li><a href="Ofertas.html">Ofertas</a></li>
+        </ul>
+      </nav>
+      <a href="ServicioAlCliente.html" class="btn"><button>Servicio al cliente</button></a>
+
+      <!--Barra para vista mobile-->
+
+      <a onclick="openNav()" href="#" class="menu"><button>Menu</button></a>
+      <div class="overlay" id="mobile_menu">
+        <a onclick="closeNav()" href="" class="close">&times;</a>
+        <div class="overlay_content">
+          <a href="Etiquetas.html">Etiquetas</a>
+          <a href="Filtros.html">Filtros</a>
+          <a href="Ofertas.html">Ofertas</a>
+          <a href="ServicioAlCliente.html">Filtros</a>
+        </div>
+      </div>
+    </header>
+
+    <br>
+    <h1> Bienvenido a los filtros del Anticuario Web </h1>
+    <br>
+    <p>
+        Bienvenido al los filtros del Anticuario Web. <br>
+        Actualmente no contamos con una sección de filtros pero lo añadiremos en siguientes actualizaciones, estamos trabajando para usted.<br>
+        Disfrute los productos que tenemos para usted.<br>
+        <a href="Anticuario.html">Para volver a la página principal, >aquí< </a>
+    </p>
+    <br>
+    <div class="Proximamente"><img src="Proximamente.jpg"></div>
+
+    <script type="text/javascript" src="nav.js"></script>
+  </body>
+</html>

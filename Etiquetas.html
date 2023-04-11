@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Anticuario</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="Author" content="Etiquetas" />
+    <link rel="stylesheet" href="styles.css">
+
+    <Style>
+        h1{
+            text-align: left;
+            font-size: 40px;
+            margin-left: 25px;
+        }
+
+        
+    </Style>
+
+  </head>
+  
+  <body>
+    
+    <!-- Barra superior de la paguina -->
+    <header class= "header">
+      <div class="logo"> 
+        <a href="Anticuario.html"><img src="OIP.jpg" alt="Logo de la pagina"></a>
+      </div>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="Etiquetas.html">Etiquetas</a></li>
+          <li><a href="Filtros.html">Filtros</a></li>
+          <li><a href="Ofertas.html">Ofertas</a></li>
+        </ul>
+      </nav>
+      <a href="ServicioAlCliente.html" class="btn"><button>Servicio al cliente</button></a>
+
+      <!--Barra para vista mobile-->
+
+      <a onclick="openNav()" href="#" class="menu"><button>Menu</button></a>
+      <div class="overlay" id="mobile_menu">
+        <a onclick="closeNav()" href="" class="close">&times;</a>
+        <div class="overlay_content">
+          <a href="Etiquetas.html">Etiquetas</a>
+          <a href="Filtros.html">Filtros</a>
+          <a href="Ofertas.html">Ofertas</a>
+          <a href="ServicioAlCliente.html">Servicio al cliente</a>
+        </div>
+      </div>
+    </header>
+
+    <br>
+    <h1> Etiquetas </h1>
+    <br>
+    <div class="ListaEtiquetas">
+        <a href="Dormitorio.html"> > Dormitorio</a> <br>
+        <a href="Menaje.html"> > Menaje</a> <br>
+        <a href="Instrumentos.html"> > Instrumentos</a> <br>
+    </div>
+
+    <script type="text/javascript" src="nav.js"></script>
+  </body>
+</html>

@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: rgb(202, 202, 202);;
+    background-color: rgb(255, 255, 255);;
 }
 .header{
     background-color: black;
@@ -148,4 +148,21 @@ body{
         top: 15px;
         right: 35px;
     }
+}
+
+.ListaEtiquetas{
+    font-size: 65px;
+    text-align: left;
+    margin-left: 55px;
+    
+}
+.ListaEtiquetas a{
+    text-decoration: none;
+    color: black;
+    font-size: 35px;
+}
+.ListaEtiquetas a:hover{
+    color:rgb(228, 213, 6);
+    border: none;
+    cursor: pointer;
 }
