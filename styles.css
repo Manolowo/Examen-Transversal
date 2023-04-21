@@ -150,18 +150,18 @@ body{
 }
 /*----------------------------------------*/
 
-.ListaEtiquetas{
+#ListaEtiquetas{
     font-size: 65px;
     text-align: left;
     margin-left: 55px;
     
 }
-.ListaEtiquetas a{
+#ListaEtiquetas a{
     text-decoration: none;
     color: black;
     font-size: 35px;
 }
-.ListaEtiquetas a:hover{
+#ListaEtiquetas a:hover{
     color:rgb(228, 213, 6);
     border: none;
     cursor: pointer;
