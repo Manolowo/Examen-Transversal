@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="Author" content="Carrito Compras" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="spinner.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <Style>
         h1{
@@ -15,15 +18,115 @@
           font-size: 40px;
           margin-left: 25px;
         }
-        h2{
-          padding: 6px;
-          
-        }
-        .card-body{
-          text-align: center;
-        }
-        
     </Style>
+
+    <script>
+    $(document).ready(
+      function() {
+          
+          $("#EnvioCorreo").submit(function(){ 
+              var mail =$("#mail").val();
+              var rut =$("#Rut").val();
+              var nombre =$("#Nombre").val();
+              var appaterno =$("#Appaterno").val();
+              var apmaterno =$("#Apmaterno").val();
+              var edad =$("#Edad").val();
+              var sexo =$("#Sexo").val(); 
+              var celular =$("#Celular").val();
+              var comentario =$("#Comentario").val();
+
+              console.log("Mail Obtenido:", mail);
+              console.log("Rut Obtenido:", rut);
+              console.log("Nombre Obtenido:", nombre);
+              console.log("Appaterno Obtenido:", appaterno);
+              console.log("Apmaterno Obtenido:", apmaterno);
+              console.log("Edad Obtenido:", edad);
+              console.log("Sexo Obtenido:", sexo);
+              console.log("Celular Obtenido:", celular);
+              
+
+              var cadenaError="";
+              var cadenaErrLargo=""; 
+              
+              var largoCadenaRut = rut.length;
+              var largoCadenaNombre = nombre.length;
+              var largoCadenaAppaterno = appaterno.length;
+              var largoCadenaApmaterno = apmaterno.length;
+              var largoCadenaCelular = celular.length;
+              var largoCadenaComentario = comentario.length;
+
+              if(mail===""){
+                  cadenaError+= "Ingrese el campo Correo.\n";
+              }
+              if(rut===""){
+                  cadenaError+= "Ingrese el campo Rut.\n";
+              }
+              if(largoCadenaRut<9 || largoCadenaRut>10){
+                  cadenaErrLargo+="Rut no valido. Recuerde escribir el rut en el formato correcto. ej. 99999999-9\n";
+              }
+              
+              if(nombre===""){
+                  cadenaError+= "Ingrese el campo nombre.\n";
+              }
+              if(largoCadenaNombre<3 || largoCadenaNombre>20){
+                  cadenaErrLargo+="Nombre no valido. Recuerde escribir el Nombre en el formato correcto. NO menos de 3 letras, No más de 20.\n";
+              }
+
+              if(appaterno===""){
+                  cadenaError+= "Ingrese el campo appaterno.\n";
+              }
+              if(largoCadenaAppaterno<3 || largoCadenaAppaterno>20){
+                  cadenaErrLargo+="Apellido no valido. Recuerde escribir el Apellido en el formato correcto. NO menos de 3 letras, No más de 20.\n";
+              }
+
+              if(apmaterno===""){
+                  cadenaError+= "Ingrese el campo apmaterno.\n";
+              }
+              if(largoCadenaApmaterno<3 || largoCadenaApmaterno>20){
+                  cadenaErrLargo+="Apellido no valido. Recuerde escribir el Apellido en el formato correcto. NO menos de 3 letras, No más de 20.\n";
+              }
+
+              if(edad===""){
+                  cadenaError+= "Ingrese el campo edad.\n";
+              }
+              if(edad<18){
+                  cadenaErrLargo+="Edad no valida. Recuerde que la edad minima de compra es de 18 años\n";
+              }
+
+              if(celular===""){
+                  cadenaError+= "Ingrese el campo celular.\n";
+              }
+              if(largoCadenaCelular!=8){
+                  cadenaErrLargo+="Telefono no valido. Recuerde escribir los 8 digitos de su numero de telefono, el (+56 9) ya está añadido\n";
+              }
+
+              if(largoCadenaComentario>0){
+                if(largoCadenaComentario<20){
+                  cadenaErrLargo+= "Comentario no valido. Comentario muy corto (Minimo 20 caracteres).\n";
+                  console.log("Comentario Obtenido:", comentario);
+                }
+                if(largoCadenaComentario>500){
+                  cadenaErrLargo+= "Comentario no valido. Comentario muy largo (Maximo 500 caracteres).\n";
+                  console.log("Comentario Obtenido:", comentario);
+                }
+              }
+              
+
+              if(cadenaError !==""){
+                  alert("Formulario NO enviado, revise el dato ingresado o complete las secciones incompletas del formulario\nPor favor, complete los siguientes campos:\n"+ cadenaError);
+              }
+              if(cadenaErrLargo !==""){
+                  alert("Formulario NO enviado:\n"+ cadenaErrLargo);
+              }
+
+              else
+                alert("Formulario Enviado, será contactado dentro de los proximos 3 dias habiles para el envío una vez haya cancelado la compra.");
+              
+          });          
+      }
+  );
+    
+  </script>
 
   </head>
   
@@ -37,11 +140,10 @@
       <nav>
         <ul class="nav_links">
           <li><a href="Etiquetas.html">Etiquetas</a></li>
-          <li><a href="Filtros.html" data-bs-toggle="modal" data-bs-target="#exampleModal">Filtros</a></li>
+          <li><a href="Filtros.html">Filtros</a></li>
           <li><a href="Ofertas.html">Ofertas</a></li>
           <li><a href="ServicioAlCliente.html">ServicioAlCliente</a></li>
-          <li><a href="CarritoCompras.html">Carrito</a></li>
-        </ul>
+          <li><a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#modal">Carrito<i class="bi bi-cart mx-5" id="carritoContenedor">0</i></a></li>
       </nav>
 
       <!--Barra para vista mobile-->
@@ -54,45 +156,179 @@
           <a href="Filtros.html" >Filtros</a>
           <a href="Ofertas.html">Ofertas</a>
           <a href="ServicioAlCliente.html">Servicio al cliente</a>
-          <a href="CarritoCompras.html">Carrito</a>
+          <a href="Anticuario.html">Pagina Principal</a>
         </div>
       </div>
     </header>
     <br>
     <h1> Bienvenido al Carrito de compras del Anticuario web </h1>
     <br>
-    <div class="card">
-      <div class="card-body">
-        Aquí se añadiran todas las compras que quieras realizar. De momento, no hay productos.
-      </div>
-    </div>
+  
+  
+      <main>
 
-    
+      <div id="EnvioCorreo">
+        <form>
+        <div class="form-group"> 
+            <span class="input-group-text" id="basic-addon1">Correo electrónico: </span>    
+            <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Ingrese su correo electrónico">
+            <small id="emailHelp" class="form-text text-muted"> We'll never share your email with anyone else.</small>
+        </div>
+        
+        <br>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Seccion de Filtros</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Actualmente no contamos con una sección de filtros pero lo añadiremos en siguientes actualizaciones, estamos trabajando para usted.
-        Disfrute los productos que tenemos para usted.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <a href="ServicioAlCliente.html"><button type="button" class="btn btn-primary">Ir a servicio Al Cliente</button></a>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Rut: </span>
+            <input type="text" class="form-control" id="Rut" placeholder="Ingrese su Rut" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
 
+        <br>
+        
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Nombre: </span>
+            <input type="text" class="form-control" id="Nombre" placeholder="Ingrese su nombre" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        
+        <br>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Apellido Paterno: </span>
+            <input type="text" class="form-control" id="Appaterno" placeholder="Ingrese su Apellido Paterno" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        
+        <br>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Apellido Materno: </span>
+            <input type="text" class="form-control" id="Apmaterno" placeholder="Ingrese su Apellido Materno" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+
+        <br>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Edad: </span>
+            <input type="number" class="form-control" id="Edad" placeholder="Ingrese su Edad" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+
+        <br>
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Celular: +56 9</span>
+            <input type="number" class="form-control" id="Celular" placeholder="Ingrese su Celular" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+
+        <br>
+        <div class="input-group">
+          <span class="input-group-text">Comentarios para el envio: </span>
+          <textarea class="form-control" id="Comentario" aria-label="With textarea" placeholder="Ingresa tu hermoso Comentario"></textarea>
+        </div>
+        <br>
+          
+          <button class="BotonEnvioCorreo" type="submit">Proceder a la Compra</button>
+
+      </div>
+
+          <div class="container">
+              <div class="row mt-3">
+                  <div class="col">
+                      <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
+                      <form id="procesar-pago" method="POST">
+  
+                          <div id="carrito" class="form-group table-responsive">
+                              <table class="table" id="lista-compra">
+                                  <thead>
+                                      <tr>
+                                          <th scope="col">Imagen</th>
+                                          <th scope="col">Nombre</th>
+                                          <th scope="col">Precio</th>
+                                          <th scope="col">Cantidad</th>
+                                          <th scope="col">Sub Total</th>
+                                      </tr>
+   
+                                  </thead>
+                                  <tbody>
+  
+                                  </tbody>
+                                  <tr>
+                                      <th colspan="4" scope="col" class="text-right">TOTAL
+                                          <p id="totalProceso"></p>
+                                      </th>
+                                      <!-- <th scope="col"></th> -->
+                                  </tr>
+  
+                              </table>
+                          </div>
+  
+                          <div class="row justify-content-center d-none" id="spinner">
+                              <div class="spinner">
+                                  <div class="dot1"></div>
+                                  <div class="dot2"></div>
+                              </div>
+                          </div>
+  
+                          <div class="row justify-content-between">
+                              
+                              
+                               
+                              <div class="Comprar">
+                                <a class="Comprar" href="Anticuario.html">Volver a la Pagina Principal </a>
+                              </div> 
+
+                          </div>
+                      </form>
+  
+  
+                  </div>
+  
+  
+              </div>
+  
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <!-- Por alguna razon si borro este boton, no se muestran las imagenes del carrito xd -->
+          <button id="activarFuncion" class="btn btn-secondary boton mt-2">¡Click!</button>   
+      </main>
+  
     <script type="text/javascript" src="nav.js"></script>
+
+    <script src="App.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+
   </body>
 </html>

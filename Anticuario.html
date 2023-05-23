@@ -35,10 +35,10 @@
       <nav>
         <ul class="nav_links">
           <li><a href="Etiquetas.html">Etiquetas</a></li>
-          <li><a href="Filtros.html" data-bs-toggle="modal" data-bs-target="#exampleModal">Filtros</a></li>
+          <li><a href="Filtros.html">Filtros</a></li>
           <li><a href="Ofertas.html">Ofertas</a></li>
           <li><a href="ServicioAlCliente.html">ServicioAlCliente</a></li>
-          <li><a href="CarritoCompras.html">Carrito</a></li>
+          <li><a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#modal">Carrito<i class="bi bi-cart mx-5" id="carritoContenedor">0 </i> </a></li>
         </ul>
       </nav>
       <!-- <a href="ServicioAlCliente.html" class="nav_links"><button>Servicio al cliente</button></a> -->
@@ -63,43 +63,41 @@
     <div class="contenedor">
 
     <!-- Carrusel -->
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="10000">
-            <a href="Platos1.html"><img src="Productos/platos.jpg" class="d-block w-100" alt="..."></a>
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Pack de platos</h5>
-              <p>Ve a este producto en oferta clickeando en el.</p>
-            </div>
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <a href="PackDormitorio.html"><img src="Productos/pack cama.jpg" class="d-block w-100" alt="..."></a>
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Pack de dormitorio</h5>
-              <p>Ve a este producto en oferta clickeando en el.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <a href="Saxofon1.html"><img src="Productos/saxofon.jpg" class="d-block w-100" alt="..."></a>
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Saxofon Antiguo</h5>
-              <p>Ve a este producto en oferta clickeando en el.</p>
-            </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="Ofertas.html"><img src="Productos/platos.jpg" class="d-block w-100" alt="..."></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Productos en Oferta</h5>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div class="carousel-item">
+          <a href="Ofertas.html"></a><img src="Productos/pack cama.jpg" class="d-block w-100" alt="..."></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Productos en Oferta</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <a href="Ofertas.html"></a><img src="Productos/saxofon.jpg" class="d-block w-100" alt="..."></a>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Productos en Oferta</h5>
+
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
     <div>
@@ -119,27 +117,76 @@
       
     </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Seccion de Filtros</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Actualmente no contamos con una sección de filtros pero lo añadiremos en siguientes actualizaciones, estamos trabajando para usted.
-        Disfrute los productos que tenemos para usted.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <a href="ServicioAlCliente.html"><button type="button" class="btn btn-primary">Ir a servicio Al Cliente</button></a>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- Modal Carrito -->
+        <div class="container-xl">
+          <div class="modal" tabindex="-1" role="dialog" id="modal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Carrito</h5>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    X
+                  </button>
+                </div>
+                <!-- Productos dentro del modal -->
+                <div class="modal-body"></div>
 
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" id="vaciarCarrito">
+                    Vaciar carrito
+                  </button>
+                  <button type="button" id="procesarCompra" class="btn btn-primary">
+                    Ir a comprar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+    
+                  <span>Precio total:</span>
+                  <p class="text-center" id="precioTotal"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Fin de Carrito-->
+
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                ¿Nuestra historia?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Nuestros Contactos:
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Nuestro correo de Empresa: EmaildeEmpresa@hotmail.com
+                <br>
+                Contactanos por nuesto telefono de Empresa: 65 2 4433 2211
+              </div>
+            </div>
+          </div>
+        </div>
+    
     <script type="text/javascript" src="nav.js"></script>
+
+    <script src="App.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

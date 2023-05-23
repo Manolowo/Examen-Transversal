@@ -17,14 +17,16 @@
 
         p{
             text-align:center;
-            font-size: 30px;
+            font-size: 20px;
             color: black;
         }
-        .Proximamente{
+        .card{
             text-align: center;
-            transform: scale(1.2);
+            justify-content: center;
+            align-items: center;  
+            padding: 25px;
+            width:fit-content;
         }
-        
 
     </Style>
 
@@ -40,10 +42,10 @@
       <nav>
         <ul class="nav_links">
           <li><a href="Etiquetas.html">Etiquetas</a></li>
-          <li><a href="Filtros.html" data-bs-toggle="modal" data-bs-target="#exampleModal">Filtros</a></li>
+          <li><a href="Filtros.html">Filtros</a></li>
           <li><a href="Ofertas.html">Ofertas</a></li>
           <li><a href="ServicioAlCliente.html">ServicioAlCliente</a></li>
-          <li><a href="CarritoCompras.html">Carrito</a></li>
+          <li><a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#modal">Carrito<i class="bi bi-cart mx-5" id="carritoContenedor">0 </i> </a></li>
         </ul>
       </nav>
       <!--Barra para vista mobile-->
@@ -62,16 +64,59 @@
     </header>
 
     <br>
-    <h1> Bienvenido a los filtros del Anticuario Web </h1>
+    <h1> </h1>
     <br>
-    <p>
-        Bienvenido al los filtros del Anticuario Web. <br>
-        Actualmente no contamos con una sección de filtros pero lo añadiremos en siguientes actualizaciones, estamos trabajando para usted.<br>
-        Disfrute los productos que tenemos para usted.<br>
-        <a href="Anticuario.html">Para volver a la página principal, >aquí< </a>
-    </p>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Bienvenido a los filtros del Anticuario Web </h5>
+        <p class="card-text">Actualmente no contamos con una sección de filtros pero lo añadiremos en siguientes actualizaciones, estamos trabajando para usted.
+          Disfrute los productos que tenemos para usted.</p>
+        <a href="Anticuario.html" class="btn btn-primary">Volver al menu Principal</a>
+      </div>
+    </div>
+
+            <!-- Modal Carrito -->
+            <div class="container-xl">
+              <div class="modal" tabindex="-1" role="dialog" id="modal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Carrito</h5>
+                      <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        X
+                      </button>
+                    </div>
+                    <!-- Productos dentro del modal -->
+                    <div class="modal-body"></div>
+    
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" id="vaciarCarrito">
+                        Vaciar carrito
+                      </button>
+                      <button type="button" id="procesarCompra" class="btn btn-primary">
+                        Ir a comprar
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cerrar
+                      </button>
+        
+                      <span>Precio total:</span>
+                      <p class="text-center" id="precioTotal"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Fin de Carrito-->    
 
     <script type="text/javascript" src="nav.js"></script>
+
+    <script src="App.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

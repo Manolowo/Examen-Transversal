@@ -30,10 +30,10 @@
       <nav>
         <ul class="nav_links">
           <li><a href="Etiquetas.html">Etiquetas</a></li>
-          <li><a href="Filtros.html" data-bs-toggle="modal" data-bs-target="#exampleModal">Filtros</a></li>
+          <li><a href="Filtros.html">Filtros</a></li>
           <li><a href="Ofertas.html">Ofertas</a></li>
           <li><a href="ServicioAlCliente.html">Servicio al cliente</a></li>
-          <li><a href="CarritoCompras.html">Carrito</a></li>
+          <li><a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#modal">Carrito<i class="bi bi-cart mx-5" id="carritoContenedor">0 </i> </a></li>
         </ul>
       </nav>
       <!--Barra para vista mobile-->
@@ -64,28 +64,48 @@
       </ul>
     </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Seccion de Filtros</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                Actualmente no contamos con una sección de filtros pero lo añadiremos en siguientes actualizaciones, estamos trabajando para usted.
-                Disfrute los productos que tenemos para usted.
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <a href="ServicioAlCliente.html"><button type="button" class="btn btn-primary">Ir a servicio Al Cliente</button></a>
+        <!-- Modal Carrito -->
+        <div class="container-xl">
+          <div class="modal" tabindex="-1" role="dialog" id="modal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Carrito</h5>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    X
+                  </button>
+                </div>
+                <!-- Productos dentro del modal -->
+                <div class="modal-body"></div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" id="vaciarCarrito">
+                    Vaciar carrito
+                  </button>
+                  <button type="button" id="procesarCompra" class="btn btn-primary">
+                    Ir a comprar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+    
+                  <span>Precio total:</span>
+                  <p class="text-center" id="precioTotal"></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <!--Fin de Carrito-->
     
     <script type="text/javascript" src="nav.js"></script>
-    
+
+    <script src="App.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>

@@ -167,7 +167,7 @@ body{
     cursor: pointer;
 }
 
-.imgProducto{
+.contenedor .ImgProducto{
     width: 320px;
     height: 340px;
     object-fit: cover;
@@ -180,7 +180,7 @@ body{
     gap: 50px;
     margin-bottom: 20px;
 }
-.contenedor .ImagenProducto{
+.contenedor .ImgProducto{
     background-color: black;
     border-radius: 20px;
     font-size: 25px;
@@ -195,6 +195,36 @@ body{
 .contenedor>div:hover{
     background-color: rgb(221, 221, 221);
 }
+
+
+.row img{
+    width: 320px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+.row img{
+    background-color: black;
+    border-radius: 20px;
+    font-size: 25px;
+    color:white;
+    text-align: center;
+}
+.row>div{
+    box-shadow: 0px 0px 5px 0px rgb(0,0,0,0.75);
+    background-color: white;
+    border-radius: 20px;
+}
+.row>div:hover{
+    background-color: rgb(221, 221, 221);
+} 
 
 .informacion{
     height: auto;
@@ -216,16 +246,18 @@ body{
     font-size: 17px;
     font-family: 300;
 }
-.informacion button{
+.informacion{
     background-color: black;
-    width: 100px;
-    height: 35;
+    width: auto;
+    padding: 5px;
+    height: 35px;
     border-radius: 10px;
     border: none;
-    font-size: 17px;
+    font-size: 30px;
     font-weight: 300;
     cursor: pointer;
     color:white;
+    
 }
 .informacion button:hover{
     background-color: rgb(228, 213, 6);
@@ -233,21 +265,25 @@ body{
     transition: 0.5s;
 }
 
-.Comprar button{
+.Comprar{
     background-color: black;
-    width: 100px;
-    height: 35;
-    border-radius: 10px;
-    border: none;
-    font-size: 17px;
-    font-weight: 300;
+    color: white;
     cursor: pointer;
-    color:white;
-    transform:scale(1.3);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: larger;
+    font-weight: 300;
+    display:inherit;
+    justify-content: center;
+    text-decoration: none;
+
 }
-.Comprar button:hover{
+
+.Comprar a:hover{
     background-color: rgb(228, 213, 6);
-    transform: scale(1.5);
+    color: black;
+    transform: scale(1.3);
     transition: 0.5s;
 }
 
@@ -269,8 +305,8 @@ body{
     transform: scale(1.1);
 }
 
-#carouselExampleDark{
-    background-color: rgb(116, 116, 116);
+#carouselExampleCaptions{
+    background-color: rgb(0, 0, 0);
     color: black;
     padding: auto;
     align-items: center;
@@ -279,10 +315,12 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
+    transition: none;
 }
 
 .carousel-inner{
     height: 500px;
+    transition: none;
 }
 .carousel-inner img{
     height: 475px;
@@ -291,4 +329,26 @@ body{
     text-align: center;
     border-radius: 20px;
     font-size: 25px;
+    transition: none;
+}
+
+.modal-contenedor{
+    display:flex;
+    align-items: center;
+    gap:2rem;
+}
+.img-carrito{
+    width:200px;
+    padding:20px;
+} 
+.modal-content{
+    background-color: #E3D8D6;
+}
+.parrafo{
+    font-weight: 900;
+    font-style: italic;
+}
+#precioTotal{
+    margin:0;
+    padding:0;
 }
